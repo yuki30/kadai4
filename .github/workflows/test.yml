@@ -1,0 +1,17 @@
+name: GCD Tests
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: リポジトリをチェックアウト
+      uses: actions/checkout@v2
+
+    - name: 実行権限の設定
+      run: chmod +x *.sh
+
+    - name: テストの実行
+      run: ./test_gcd.sh
